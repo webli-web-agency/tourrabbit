@@ -68,9 +68,9 @@ const Home = () => {
       <div className="w-full h-full flex flex-col justify-center md:justify-start md:mt-[30vh] items-center text-center gap-6 px-4">
 
         {/* TITLE + IMAGE */}
-        <div className="flex justify-center items-center gap-3 md:gap-6">
+        <div className="flex justify-center items-center gap-1 md:gap-6 px-6">
           
-          <h1 className="leftText text-[12vw] md:text-[8vw] font-bold text-yellow-500 tracking-tight opacity-0">
+          <h1 className="leftText leading-none text-[12vw] md:text-[8vw] font-bold text-yellow-500 tracking-tight opacity-0">
             TOUR
           </h1>
 
@@ -82,13 +82,13 @@ const Home = () => {
             />
           </div>
 
-          <h1 className="rightText text-[12vw] md:text-[8vw] font-bold text-white tracking-tight opacity-0">
+          <h1 className="rightText leading-none text-[12vw] md:text-[8vw] font-bold text-white tracking-tight opacity-0">
             RABBIT
           </h1>
         </div>
 
         {/* SUBTEXT */}
-        <p className="subText text-white/80 text-base md:text-xl max-w-xl opacity-0">
+        <p className="subText text-white/80 text-base md:text-xl max-w-xl opacity-0 px-4">
           Making travel dreams a reality — one adventure at a time.
         </p>
 

@@ -76,8 +76,8 @@ const Header = () => {
 
         {/* LEFT LOGO + BRAND */}
         <div className="relative z-10 flex items-center gap-4">
-          <div className="w-12 h-12 rounded-full overflow-hidden ring-2 ring-white/10">
-            <img src="/logo.jpeg" className="w-full h-full object-cover" />
+          <div className="w-12 h-12 rounded-full overflow-hidden glow">
+            <img src="/logo.webp" className="w-full h-full object-cover" />
           </div>
 
           <div className="flex flex-col">

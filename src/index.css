@@ -18,3 +18,7 @@ h1, h2, .heading {
 body, p, span {
   font-family: 'Nunito', sans-serif;
 }
+/* yellow glow for logo div */
+.glow{
+  box-shadow: 0 0 10px 2px rgba(255, 223, 0, 0.7);
+}

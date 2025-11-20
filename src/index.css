@@ -10,3 +10,11 @@ body{
   display: block;
   transform-origin: center;
 }
+
+h1, h2, .heading {
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+body, p, span {
+  font-family: 'Nunito', sans-serif;
+}

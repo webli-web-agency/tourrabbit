@@ -11,9 +11,10 @@ import Contact from "./pages/Contact";
 const App = () => {
   return (
     <>
-    <Header />
-    <main className="relative w-screen overflow-x-hidden">
-      
+  
+    <main className="relative w-screen overflow-x-hidden overflow-y-visible">
+
+      <Header />
       <Home />
       <About />
       <Services />

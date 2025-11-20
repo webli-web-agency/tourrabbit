@@ -2,7 +2,7 @@ import React from 'react'
 
 const HorizontalScroll = () => {
   return (
-    <section className='relative w-full h-screen'></section>
+    <section id='gallery' className='relative w-full h-screen'></section>
   )
 }
 

@@ -12,16 +12,17 @@ const Home = () => {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
     tl.fromTo(
-      ".leftText",
-      { y: -150, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1 }
-    )
-      .fromTo(
         ".rabbitWrap",
         { y: 150, opacity: 0, scale: 0.7 },
         { y: 0, opacity: 1, scale: 1, duration: 1.2 },
-        "-=0.6"
+        "-=0.8"
       )
+      .fromTo(
+      ".leftText",
+      { y: -150, opacity: 0 },
+      { y: 0, opacity: 1, duration: 1 },
+      "-=0.8"
+    )
       .fromTo(
         ".rightText",
         { x: 150, opacity: 0 },

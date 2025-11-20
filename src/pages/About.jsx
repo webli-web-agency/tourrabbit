@@ -44,11 +44,27 @@ const About = () => {
         ease: "none",
         scrollTrigger: {
           trigger: container.current,
-          start: "top 96%",
-          end: "bottom 96%",
+          start: "top 90%",
+          end: "bottom 90%",
           scrub: true,
         },
       });
+
+      // SLIGHT ZOOM-IN SECTION SCROLL EFFECT
+      gsap.fromTo(
+        container.current,
+        { scale: 0.95 },
+        {
+          scale: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: container.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          },
+        }
+      );
     }, container);
 
     return () => ctx.revert();
@@ -72,7 +88,7 @@ const About = () => {
       {/* PARAGRAPH */}
       <p
         ref={textRef}
-        className="mt-10 max-w-4xl text-center text-xl md:text-xl text-neutral-300 leading-[1.8] tracking-wide"
+        className="mt-10 max-w-4xl text-center text-sm md:text-xl text-neutral-300 leading-[1.8] tracking-wide"
       >
         {aboutText.split("").map((char, index) => (
           <span key={index} className="char text-neutral-500">

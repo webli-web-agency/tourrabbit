@@ -2,7 +2,7 @@ import React from 'react'
 
 const HorizontalScroll = () => {
   return (
-    <div>HorizontalScroll</div>
+    <section className='relative w-full h-screen'></section>
   )
 }
 

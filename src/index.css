@@ -1,2 +1,12 @@
 @import 'tailwindcss';
 
+body{
+    overflow-x: hidden;
+    color: white;
+    background: #010101;
+}
+
+.line-1, .line-2 {
+  display: block;
+  transform-origin: center;
+}

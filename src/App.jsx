@@ -13,12 +13,12 @@ const App = () => {
     <main className="relative w-screen overflow-x-hidden">
       <Header />
       <Home />
-      {/* <About /> */}
-      {/* <Services /> */}
-      {/* <Testimonials /> */}
-      {/* <HorizontalScroll /> */}
-      {/* <Contact /> */}
-      {/* <Footer /> */}
+      <About />
+      <Services />
+      <Testimonials />
+      <HorizontalScroll />
+      <Contact />
+      <Footer />
     </main>
   );
 };

@@ -7,6 +7,7 @@ import Services from "./pages/Services";
 import Testimonials from "./pages/Testimonials";
 import HorizontalScroll from "./pages/HorizontalScroll";
 import Contact from "./pages/Contact";
+import Packages from "./pages/Packages";
 
 const App = () => {
   return (
@@ -18,7 +19,7 @@ const App = () => {
       <Home />
       <About />
       <Services />
-      <Testimonials />
+      <Packages />
       <HorizontalScroll />
       <Contact />
       <Footer />

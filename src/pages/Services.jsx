@@ -29,7 +29,7 @@ const Services = () => {
     const ctx = gsap.context(() => {
       // LEFT HEADING ANIMATION (SAME AS About.jsx)
       gsap.from(".head-1", {
-        y: 150,
+        x: 50,
         opacity: 0,
         duration: 1,
         ease: "power4.out",
@@ -41,7 +41,7 @@ const Services = () => {
 
       // RIGHT HEADING ANIMATION (SAME AS About.jsx)
       gsap.from(".head-2", {
-        y: -150,
+        x: -50,
         opacity: 0,
         duration: 1,
         ease: "power4.out",

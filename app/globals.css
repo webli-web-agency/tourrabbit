@@ -12,11 +12,11 @@ body{
 }
 
 h1, h2, .heading {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: '--font-bebas-neue', sans-serif;
 }
 
 body, p {
-  font-family: 'Nunito', sans-serif;
+  font-family: '--font-nunito', sans-serif;
 }
 /* yellow glow for logo div */
 .glow{

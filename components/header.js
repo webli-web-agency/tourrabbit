@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Plane, Heart } from "lucide-react";
@@ -8,17 +8,25 @@ gsap.registerPlugin(useGSAP);
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+
+
   useGSAP(() => {
+    // Overlay initial hidden position
+    gsap.set(".overlay", { yPercent: 100 });
+    
     // Fade-in navbar on page load
-    gsap.from(".nav-wrapper", {
+
+    gsap.fromTo(".nav-wrapper", {
       opacity: 0,
-      y: -25,
-      duration: 0.6,
+      y: "-25%",
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 1,
       ease: "power3.out",
     });
 
-    // Overlay initial hidden position
-    gsap.set(".overlay", { yPercent: 100 });
+    
   }, []);
 
   // MENU OPEN/CLOSE TOGGLE
@@ -104,7 +112,7 @@ const Header = () => {
       {/* FULL-SCREEN OVERLAY MENU */}
       <div
         className="
-        overlay fixed top-0 left-0 w-screen h-screen 
+        overlay fixed top-[100%] left-0 w-screen h-screen 
         bg-gradient-to-b from-[#f8e27a] via-[#f4c539] to-black
         z-[98] flex flex-col justify-center items-center gap-10
         text-black text-3xl font-bold tracking-wide uppercase

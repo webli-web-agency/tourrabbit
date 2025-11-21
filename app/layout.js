@@ -1,8 +1,19 @@
 import "./globals.css";
 import { Nunito, Bebas_Neue } from "next/font/google";
 
+const nunito = Nunito({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-nunito",
+});
 
-// (Optional) Use Google Fonts import from next/font if you want.
+const bebasNeue = Bebas_Neue({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-bebas-neue",
+});
+
+
 export const metadata = {
   title: "tourrabbit",
   description: "Tour Rabbit Website",

@@ -1,8 +1,9 @@
-// Packages.jsx
+"use client";
+
 import React, { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import PackageCard from "../components/PackageCard.jsx";
+import PackageCard from "../../components/packageCard.js";
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -1,8 +1,13 @@
 // PackageCard.jsx
 import React, { useRef, useLayoutEffect } from "react";
 import { gsap } from "gsap";
+import Image from "next/image";
 
 const PackageCard = ({ img, title, days, link }) => {
+
+  const isProduction = process.env.NEXT_PUBLIC_IS_PRODUCTION;
+
+
   const cardRef = useRef(null);
   const imgRef = useRef(null);
   const tlRef = useRef(null);
@@ -64,7 +69,27 @@ const PackageCard = ({ img, title, days, link }) => {
       }}
     >
       <div className="w-full h-48 md:h-56 overflow-hidden">
-        <img
+        {
+          isProduction ? (
+            <Image
+            ref={imgRef}
+            src={img}
+            alt={title}
+            className="w-full h-full object-cover opacity-90"
+            loading="lazy"
+            decoding="async"
+            onLoad={handleImgLoad}
+            width={400}
+            height={300}
+            style={{
+              transform: "translateZ(0)",
+              backfaceVisibility: "hidden",
+              willChange: "opacity",
+              // keep GPU-friendly - animate opacity only
+            }}
+            />
+          ):(
+            <img
           ref={imgRef}
           src={img}
           // consider providing webp in srcSet in production
@@ -81,6 +106,8 @@ const PackageCard = ({ img, title, days, link }) => {
             // keep GPU-friendly - animate opacity only
           }}
         />
+          )
+        }
       </div>
 
       <div className="p-5">

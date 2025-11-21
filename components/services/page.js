@@ -1,10 +1,12 @@
+"use client";
+
 // Service.jsx
 import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import Card from "../components/Card.jsx";
+import Card from "../card.js"
 
 // Icons
 import {

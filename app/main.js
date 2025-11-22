@@ -9,7 +9,7 @@ import TestimonialsMain from "../components/testimonials/index.js";
 import PackagesMain from "../components/packages/index.js";
 import ServicesMain from "../components/services/index.js";
 
-import SmoothScroll from "../components/smoothScroll"; // ADD THIS
+import SmoothScroll from "../components/smoothScroll.js"; 
 
 const Main = () => {
   return (

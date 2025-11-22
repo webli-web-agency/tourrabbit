@@ -115,8 +115,8 @@ const Header = () => {
         className="
           overlay fixed top-[100%] left-0 w-screen h-screen 
           bg-gradient-to-b from-[#f8e27a] via-[#f4c539] to-black
-          z-[98] flex flex-col justify-center items-center gap-10
-          text-black text-2xl font-bold tracking-wide uppercase
+          z-[98] flex flex-col justify-center items-center gap-5 md:gap-10
+          text-black text-md md:text-2xl font-bold tracking-wide uppercase
         "
       >
         <a href="#home" onClick={closeMenu} className="nav-link hover:text-white transition">

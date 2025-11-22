@@ -43,7 +43,7 @@ const Footer = () => {
 
             {/* Instagram */}
             <a 
-              href="https://instagram.com/tour_rabbit/" 
+              href="https://instagram.com/tour__rabbit/" 
               target="_blank" 
               className="hover:text-yellow-400 transition cursor-pointer"
             >

@@ -1,8 +1,8 @@
-"use clients";
+"use client";
 
 import React, { useRef } from "react";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Mail, Phone, MapPin } from "lucide-react";
 
@@ -68,7 +68,7 @@ const Contact = () => {
 
       {/* SUBTEXT */}
       <p className="text-neutral-300 text-center mt-4 text-sm md:text-lg max-w-xl">
-        Have questions or ready to plan your next adventure?  
+        Have questions or ready to plan your next adventure?
         We're here to help you anytime.
       </p>
 
@@ -77,20 +77,36 @@ const Contact = () => {
         
         {/* Contact Info */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 text-center">
+
+          {/* PHONE */}
           <div className="flex flex-col items-center gap-2">
-            <Phone className="text-yellow-400" size={28} />
-            <p className="text-sm text-neutral-300">+91 9618165352</p>
+            <a href="tel:+919618165352" className="flex flex-col items-center gap-2 group">
+              <Phone className="text-yellow-400 group-hover:text-yellow-300 transition" size={28} />
+              <p className="text-sm text-neutral-300 group-hover:text-white transition">
+                +91 9618165352
+              </p>
+            </a>
           </div>
 
+          {/* EMAIL */}
           <div className="flex flex-col items-center gap-2">
-            <Mail className="text-yellow-400" size={28} />
-            <p className="text-sm text-neutral-300">tourrabbitholidays@gmail.com</p>
+            <a
+              href="mailto:tourrabbit003@gmail.com"
+              className="flex flex-col items-center gap-2 group"
+            >
+              <Mail className="text-yellow-400 group-hover:text-yellow-300 transition" size={28} />
+              <p className="text-sm text-neutral-300 group-hover:text-white transition">
+                tourrabbit003@gmail.com
+              </p>
+            </a>
           </div>
 
+          {/* LOCATION */}
           <div className="flex flex-col items-center gap-2">
             <MapPin className="text-yellow-400" size={28} />
             <p className="text-sm text-neutral-300">Hyderabad, Telangana</p>
           </div>
+
         </div>
 
         {/* Form */}
@@ -127,6 +143,7 @@ const Contact = () => {
             Send Message
           </button>
         </form>
+
       </div>
     </section>
   );

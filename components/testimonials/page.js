@@ -21,15 +21,17 @@ const testimonials = [
 
 const Testimonials = () => {
   const container = useRef(null);
-  const cardRefs = useRef([]);
+  const cardsRef = useRef([]);
 
-  // Reset refs on each render (IMPORTANT!)
-  cardRefs.current = [];
+  // Reset refs per render
+  cardsRef.current = [];
 
   useGSAP(() => {
     const ctx = gsap.context(() => {
+
+      // Heading Animations
       gsap.from(".test-head-1", {
-        x: 50,
+        x: 60,
         opacity: 0,
         duration: 1,
         ease: "power4.out",
@@ -40,7 +42,7 @@ const Testimonials = () => {
       });
 
       gsap.from(".test-head-2", {
-        x: -50,
+        x: -60,
         opacity: 0,
         duration: 1,
         ease: "power4.out",
@@ -54,15 +56,15 @@ const Testimonials = () => {
         y: 40,
         opacity: 0,
         duration: 1,
-        ease: "power2.out",
+        ease: "power3.out",
         scrollTrigger: {
           trigger: container.current,
           start: "top 75%",
         },
       });
 
-      // Cards reveal
-      gsap.from(cardRefs.current, {
+      // Card Animation
+      gsap.from(cardsRef.current, {
         opacity: 0,
         y: 60,
         duration: 1,
@@ -73,6 +75,7 @@ const Testimonials = () => {
           start: "top 70%",
         },
       });
+
     }, container);
 
     return () => ctx.revert();
@@ -95,34 +98,19 @@ const Testimonials = () => {
         Real experiences from people who travelled with us.
       </p>
 
-      {/* Cards */}
+      {/* Cards Grid */}
       <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-[90%] max-w-6xl">
         {testimonials.map((t, i) => (
+          // yellowice glow cards
           <div
             key={i}
-            ref={(el) => (cardRefs.current[i] = el)}
-            className="
-              relative overflow-hidden
-              p-6 rounded-3xl 
-              bg-white/10 
-              backdrop-blur-xl 
-              border border-yellow-400/20 
-              shadow-[0_0_20px_rgba(255,200,0,0.20)]
-              hover:shadow-[0_0_35px_rgba(255,220,0,0.45)]
-              hover:border-yellow-400/40
-              transition-all duration-300
-            "
+            ref={(el) => (cardsRef.current[i] = el)}
+            className="rounded-lg shadow-lg shadow-yellow-500/30 hover:shadow-yellow-500/50 transition-shadow duration-300"
           >
-            {/* Glow behind content */}
-            <div className="absolute inset-0 bg-yellow-400/10 blur-xl opacity-30 pointer-events-none"></div>
-
-            <p className="relative text-white italic leading-relaxed">
-              "{t.text}"
-            </p>
-
-            <h3 className="relative mt-4 text-yellow-400 font-semibold tracking-wide">
-              {t.name}
-            </h3>
+            <div className="bg-black rounded-lg p-6 h-full flex flex-col justify-between">
+              <p className="text-neutral-300 text-sm md:text-base mb-4">"{t.text}"</p>
+              <h3 className="text-yellow-500 font-semibold text-sm md:text-base mt-4 self-end">- {t.name}</h3>
+            </div>
           </div>
         ))}
       </div>

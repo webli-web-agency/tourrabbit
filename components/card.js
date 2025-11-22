@@ -24,10 +24,24 @@ const Card = ({ icon: Icon, title, desc }) => {
   return (
     <div
       ref={cardRef}
-      className="group bg-white/5 backdrop-blur-md border border-white/10 hover:border-yellow-400 transition-all duration-300 rounded-2xl p-6 flex flex-col items-center text-center cursor-pointer"
+      className="
+        group 
+        bg-white/5 
+        backdrop-blur-xl 
+        border border-yellow-400/20
+        shadow-[0_0_18px_rgba(255,200,0,0.12)]
+
+        hover:border-yellow-400/40
+        hover:shadow-[0_0_30px_rgba(255,220,0,0.35)]
+        hover:scale-[1.03]
+
+        transition-all duration-300 
+        rounded-2xl 
+        p-6 flex flex-col items-center text-center cursor-pointer
+      "
     >
       {/* ICON */}
-      <div className="text-yellow-400 mb-4 group-hover:scale-110 transition-all duration-300">
+      <div className="text-yellow-400 mb-4 group-hover:scale-125 transition-all duration-300">
         <Icon size={40} strokeWidth={1.5} />
       </div>
 

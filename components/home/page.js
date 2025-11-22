@@ -16,17 +16,17 @@ const Home = () => {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
     tl.fromTo(
-        ".rabbitWrap",
-        { y: 150, opacity: 0, scale: 0.7 },
-        { y: 0, opacity: 1, scale: 1, duration: 1.2 },
-        "-=0.8"
-      )
-      .fromTo(
-      ".leftText",
-      { y: -150, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1 },
+      ".rabbitWrap",
+      { y: 150, opacity: 0, scale: 0.7 },
+      { y: 0, opacity: 1, scale: 1, duration: 1.2 },
       "-=0.8"
     )
+      .fromTo(
+        ".leftText",
+        { y: -150, opacity: 0 },
+        { y: 0, opacity: 1, duration: 1 },
+        "-=0.8"
+      )
       .fromTo(
         ".rightText",
         { x: 150, opacity: 0 },
@@ -65,7 +65,7 @@ const Home = () => {
 
   return (
     <section
-    id="home"
+      id="home"
       ref={container}
       className="relative w-full h-screen overflow-hidden"
     >
@@ -73,7 +73,7 @@ const Home = () => {
 
         {/* TITLE + IMAGE */}
         <div className="flex justify-center items-center gap-1 md:gap-6 px-6">
-          
+
           <h1 className="leftText leading-none text-[12vw] md:text-[8vw] font-bold text-yellow-500 tracking-tight opacity-0">
             TOUR
           </h1>
@@ -82,19 +82,19 @@ const Home = () => {
             {
               isProduction ? (
                 <Image
-                src="/heroImage/rabbit.png"
-                alt="rabbit"
-                width={224}
-                height={224}
-                className="rabbitImg w-32 sm:w-40 md:w-56 select-none pointer-events-none"
-                priority
+                  src="/heroImage/rabbit.png"
+                  alt="rabbit"
+                  width={224}
+                  height={224}
+                  className="rabbitImg w-32 sm:w-40 md:w-56 select-none pointer-events-none"
+                  priority
                 />
               ) : (
                 <img
-              src="/heroImage/rabbit.png"
-              alt="rabbit"
-              className="rabbitImg w-32 sm:w-40 md:w-56 select-none pointer-events-none"
-            />
+                  src="/heroImage/rabbit.png"
+                  alt="rabbit"
+                  className="rabbitImg w-32 sm:w-40 md:w-56 select-none pointer-events-none"
+                />
               )
             }
           </div>
@@ -110,7 +110,14 @@ const Home = () => {
         </p>
 
         {/* CTA BUTTON */}
-        <button className="ctaBtn px-7 py-3 bg-yellow-500 text-black rounded-full font-semibold text-lg hover:bg-yellow-400 transition-all opacity-0">
+        <button
+          onClick={() => {
+            const section = document.querySelector("#packages");
+            if (section) {
+              section.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+          className="ctaBtn px-7 py-3 bg-yellow-500 text-black rounded-full font-semibold text-lg hover:bg-yellow-400 transition-all opacity-0">
           Start Your Journey
         </button>
       </div>

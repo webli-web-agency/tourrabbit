@@ -80,7 +80,7 @@ const Contact = () => {
 
           {/* PHONE */}
           <div className="flex flex-col items-center gap-2">
-            <a href="tel:+919618165352" className="flex flex-col items-center gap-2 group">
+            <a href="tel:+919618165352" className="flex md:flex-col items-center gap-2 group">
               <Phone className="text-yellow-400 group-hover:text-yellow-300 transition" size={28} />
               <p className="text-sm text-neutral-300 group-hover:text-white transition">
                 +91 9618165352
@@ -92,7 +92,7 @@ const Contact = () => {
           <div className="flex flex-col items-center gap-2">
             <a
               href="mailto:tourrabbit003@gmail.com"
-              className="flex flex-col items-center gap-2 group"
+              className="flex md:flex-col items-center gap-2 group"
             >
               <Mail className="text-yellow-400 group-hover:text-yellow-300 transition" size={28} />
               <p className="text-sm text-neutral-300 group-hover:text-white transition">
@@ -102,7 +102,7 @@ const Contact = () => {
           </div>
 
           {/* LOCATION */}
-          <div className="flex flex-col items-center gap-2">
+          <div className="flex md:flex-col items-center gap-2">
             <MapPin className="text-yellow-400" size={28} />
             <p className="text-sm text-neutral-300">Hyderabad, Telangana</p>
           </div>

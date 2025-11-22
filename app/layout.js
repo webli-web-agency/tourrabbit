@@ -1,5 +1,7 @@
 import "./globals.css";
+import 'react-toastify/dist/ReactToastify.css';
 import { Nunito, Bebas_Neue } from "next/font/google";
+import { ToastContainer } from "react-toastify";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -34,6 +36,11 @@ export default function RootLayout({ children }) {
 
       <body className={`${nunito.variable} ${bebasNeue.variable}`}>
         {children}
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          theme="dark"
+        />
       </body>
 
     </html>

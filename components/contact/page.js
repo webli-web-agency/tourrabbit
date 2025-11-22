@@ -8,7 +8,6 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import { toast } from "react-toastify";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
-
 const Contact = () => {
   const container = useRef(null);
 

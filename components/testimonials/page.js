@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const testimonials = [
   { name: "Aarav Sharma", text: "Our Hyderabad to Goa trip was perfectly planned. Smooth booking, beautiful stays and great support throughout." },
@@ -21,11 +21,13 @@ const testimonials = [
 
 const Testimonials = () => {
   const container = useRef(null);
-  const cardsRef = useRef([]);
+  const cardRefs = useRef([]);
+
+  // Reset refs on each render (IMPORTANT!)
+  cardRefs.current = [];
 
   useGSAP(() => {
     const ctx = gsap.context(() => {
-      
       gsap.from(".test-head-1", {
         x: 50,
         opacity: 0,
@@ -33,7 +35,7 @@ const Testimonials = () => {
         ease: "power4.out",
         scrollTrigger: {
           trigger: container.current,
-          start: "top 70%",
+          start: "top 80%",
         },
       });
 
@@ -44,30 +46,31 @@ const Testimonials = () => {
         ease: "power4.out",
         scrollTrigger: {
           trigger: container.current,
-          start: "top 70%",
+          start: "top 80%",
         },
       });
 
       gsap.from(".test-sub", {
-        y: 30,
+        y: 40,
         opacity: 0,
         duration: 1,
         ease: "power2.out",
         scrollTrigger: {
           trigger: container.current,
-          start: "top 65%",
+          start: "top 75%",
         },
       });
 
-      gsap.from(cardsRef.current, {
+      // Cards reveal
+      gsap.from(cardRefs.current, {
         opacity: 0,
-        y: 40,
-        duration: 0.9,
+        y: 60,
+        duration: 1,
         stagger: 0.15,
         ease: "power3.out",
         scrollTrigger: {
           trigger: container.current,
-          start: "top 60%",
+          start: "top 70%",
         },
       });
     }, container);
@@ -79,7 +82,7 @@ const Testimonials = () => {
     <section
       id="testimonial"
       ref={container}
-      className="w-full min-h-screen py-20 bg-black flex flex-col items-center px-6"
+      className="w-full min-h-screen py-20 bg-black flex flex-col items-center px-6 relative z-[5]"
     >
       {/* Heading */}
       <h1 className="text-[12vw] md:text-[7vw] font-bold tracking-tight flex gap-4 justify-center leading-none text-center">
@@ -94,28 +97,33 @@ const Testimonials = () => {
 
       {/* Cards */}
       <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-[90%] max-w-6xl">
-        {testimonials.map((testimonial, index) => (
+        {testimonials.map((t, i) => (
           <div
-  key={index}
-  ref={(el) => (cardsRef.current[index] = el)}
-  className="
-    p-6 rounded-3xl 
-    bg-white/5 
-    backdrop-blur-xl 
-    border border-yellow-400/20 
-    shadow-[0_0_15px_rgba(255,200,0,0.15)]
-    hover:shadow-[0_0_25px_rgba(255,220,0,0.35)]
-    hover:border-yellow-400/40
-    transition-all duration-300
-  "
->
-  <p className="text-neutral-200 italic leading-relaxed">"{testimonial.text}"</p>
+            key={i}
+            ref={(el) => (cardRefs.current[i] = el)}
+            className="
+              relative overflow-hidden
+              p-6 rounded-3xl 
+              bg-white/10 
+              backdrop-blur-xl 
+              border border-yellow-400/20 
+              shadow-[0_0_20px_rgba(255,200,0,0.20)]
+              hover:shadow-[0_0_35px_rgba(255,220,0,0.45)]
+              hover:border-yellow-400/40
+              transition-all duration-300
+            "
+          >
+            {/* Glow behind content */}
+            <div className="absolute inset-0 bg-yellow-400/10 blur-xl opacity-30 pointer-events-none"></div>
 
-  <h3 className="mt-4 text-yellow-400 font-semibold tracking-wide">
-    {testimonial.name}
-  </h3>
-</div>
+            <p className="relative text-white italic leading-relaxed">
+              "{t.text}"
+            </p>
 
+            <h3 className="relative mt-4 text-yellow-400 font-semibold tracking-wide">
+              {t.name}
+            </h3>
+          </div>
         ))}
       </div>
     </section>

@@ -131,8 +131,8 @@ const Header = () => {
         <a href="#testimonial" onClick={closeMenu} className="nav-link hover:text-white transition">
           Testimonial
         </a>
-        <a href="#gallery" onClick={closeMenu} className="nav-link hover:text-white transition">
-          Gallery
+        <a href="#packages" onClick={closeMenu} className="nav-link hover:text-white transition">
+          Packages
         </a>
         <a href="#contact" onClick={closeMenu} className="nav-link hover:text-white transition">
           Contact

@@ -56,18 +56,28 @@ const PackageCard = ({ img, title, days, link }) => {
 
   return (
     <div
-      ref={cardRef}
-      onMouseEnter={() => tlRef.current.play()}
-      onMouseLeave={() => tlRef.current.reverse()}
-      className="min-w-[260px] md:min-w-[300px] rounded-3xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-lg transition-transform duration-300"
-      style={{
-        // GPU & painting hints
-        transform: "translateZ(0)",
-        willChange: "transform, opacity",
-        backfaceVisibility: "hidden",
-        contain: "paint", // reduce repaint scope
-      }}
-    >
+  ref={cardRef}
+  onMouseEnter={() => tlRef.current.play()}
+  onMouseLeave={() => tlRef.current.reverse()}
+  className="
+    min-w-[260px] md:min-w-[300px] 
+    rounded-3xl overflow-hidden 
+    bg-white/5 
+    backdrop-blur-lg 
+    border border-yellow-400/20
+    shadow-[0_0_18px_rgba(255,200,0,0.15)]
+    hover:shadow-[0_0_35px_rgba(255,220,0,0.45)]
+    hover:border-yellow-400/40
+    transition-all duration-300
+  "
+  style={{
+    transform: "translateZ(0)",
+    willChange: "transform, opacity",
+    backfaceVisibility: "hidden",
+    contain: "paint",
+  }}
+>
+
       <div className="w-full h-48 md:h-56 overflow-hidden">
         {
           isProduction ? (

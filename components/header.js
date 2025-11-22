@@ -139,7 +139,7 @@ const Header = () => {
         </a>
 
         {/* FOOTER TEXT */}
-        <div className="absolute bottom-8 text-center text-sm text-white font-light">
+        <div className="absolute bottom-8 text-center text-sm text-white font-light px-4">
           © 2025 Tour Rabbit — Made with
           <span className="inline-flex items-center text-yellow-600">
             <Heart className="w-4 h-4 mx-1" fill="#f4c539" color="#f4c539" />

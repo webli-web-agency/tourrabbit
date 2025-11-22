@@ -4,11 +4,13 @@ import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 gsap.registerPlugin(useGSAP);
 
 const Home = () => {
   const container = useRef(null);
+  const isProduction = process.env.NEXT_PUBLIC_IS_PRODUCTION
 
   useGSAP(() => {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
@@ -77,11 +79,24 @@ const Home = () => {
           </h1>
 
           <div className="rabbitWrap flex justify-center items-center opacity-0">
-            <img
+            {
+              isProduction ? (
+                <Image
+                src="/heroImage/rabbit.png"
+                alt="rabbit"
+                width={224}
+                height={224}
+                className="rabbitImg w-32 sm:w-40 md:w-56 select-none pointer-events-none"
+                priority
+                />
+              ) : (
+                <img
               src="/heroImage/rabbit.png"
               alt="rabbit"
               className="rabbitImg w-32 sm:w-40 md:w-56 select-none pointer-events-none"
             />
+              )
+            }
           </div>
 
           <h1 className="rightText leading-none text-[12vw] md:text-[8vw] font-bold text-white tracking-tight opacity-0">

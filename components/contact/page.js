@@ -19,7 +19,7 @@ const Contact = () => {
     message: "",
   });
 
-  const WEB3_KEY = process.env.NEXT_PUBLIC_WEB3_KEY;
+  const WEB3_KEY = process.env.NEXT_PUBLIC_FORM_KEY;
 
   useGSAP(() => {
     const ctx = gsap.context(() => {

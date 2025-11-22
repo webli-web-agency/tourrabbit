@@ -32,7 +32,7 @@ const Header = () => {
       // OPEN MENU
       tl.to(".line-1", { rotate: 45, y: 6 })
         .to(".line-2", { rotate: -45, y: -6 }, "<")
-        .to(".overlay", { yPercent: -100 }, "<")
+        .to(".overlay", { yPercent: -100, opacity:1 }, "<")
         .fromTo(
           ".nav-link",
           { opacity: 0, y: 20 },
@@ -41,7 +41,7 @@ const Header = () => {
     } else {
       // CLOSE MENU
       tl.to(".nav-link", { opacity: 0, y: 10, stagger: -0.06 })
-        .to(".overlay", { yPercent: 0 }, "<")
+        .to(".overlay", { yPercent: 0, opacity: 0 }, "<")
         .to(".line-1", { rotate: 0, y: 0 }, "-=0.1")
         .to(".line-2", { rotate: 0, y: 0 }, "<");
     }
@@ -56,7 +56,7 @@ const Header = () => {
     });
 
     tl.to(".nav-link", { opacity: 0, y: 10, stagger: -0.06 })
-      .to(".overlay", { yPercent: 100 }, "<")
+      .to(".overlay", { yPercent: 100, opacity: 1 }, "<")
       .to(".line-1", { rotate: 0, y: 0 }, "-=0.1")
       .to(".line-2", { rotate: 0, y: 0 }, "<");
 
@@ -116,7 +116,7 @@ const Header = () => {
           overlay fixed top-[100%] left-0 w-screen h-screen 
           bg-gradient-to-b from-[#f8e27a] via-[#f4c539] to-black
           z-[98] flex flex-col justify-center items-center gap-10
-          text-black text-3xl font-bold tracking-wide uppercase
+          text-black text-2xl font-bold tracking-wide uppercase
         "
       >
         <a href="#home" onClick={closeMenu} className="nav-link hover:text-white transition">

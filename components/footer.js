@@ -52,7 +52,7 @@ const Footer = () => {
 
             {/* WhatsApp with Prefilled Message */}
             <a 
-              href="https://wa.me/9618165352?text=Hi%20Tour%20Rabbit%2C%20I%20want%20to%20plan%20a%20trip.%20Please%20help%20me%20with%20the%20details."
+              href="https://wa.me/919618165352?text=Hi%20Tour%20Rabbit%2C%20I%20want%20to%20plan%20a%20trip.%20Please%20help%20me%20with%20the%20details."
               target="_blank" 
               className="hover:text-yellow-400 transition cursor-pointer"
             >

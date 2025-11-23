@@ -4,11 +4,11 @@ import React from "react";
 import Image from "next/image";
 
 const PackageCard = ({ img, title, days, link }) => {
-  
+
   return (
     <div
       className="
-        min-w-[260px] md:min-w-[300px]
+        w-[260px] md:w-[300px]
         rounded-3xl overflow-hidden
         bg-white/5 backdrop-blur-lg
         border border-yellow-400/20
@@ -21,16 +21,16 @@ const PackageCard = ({ img, title, days, link }) => {
         contain: "paint",
       }}
     >
+      {/* FIXED HEIGHT IMAGE BOX */}
       <div className="w-full h-48 md:h-56 overflow-hidden">
-     
-          <Image
+        <Image
           src={img}
           alt={title}
-          className="w-full h-full object-cover opacity-90"
           width={400}
           height={300}
           loading="lazy"
           decoding="async"
+          className="w-full h-full object-cover opacity-90"
         />
       </div>
 

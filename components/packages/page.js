@@ -4,12 +4,12 @@ import React, { useRef, useLayoutEffect } from "react";
 import gsap from "gsap";
 import { Draggable } from "gsap/Draggable";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import PackageCard from "../../components/PackageCard";
+import PackageCard from "../../components/packageCard.js";
 
 gsap.registerPlugin(Draggable, ScrollTrigger);
 
 const Packages = () => {
-  const isProduction = process.env.NEXT_PUBLIC_IS_PRODUCTION;
+  
 
   const containerRef = useRef(null);
   const sliderRef = useRef(null);

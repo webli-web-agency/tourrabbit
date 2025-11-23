@@ -8,16 +8,44 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const testimonials = [
-  { name: "Aarav Sharma", text: "Our Hyderabad to Goa trip was perfectly planned. Smooth booking, beautiful stays and great support throughout." },
-  { name: "Riya Verma", text: "Amazing experience! They helped us choose the best package for Pondicherry and everything was exactly as promised." },
-  { name: "Krishna Patel", text: "Very professional. The trip was budget-friendly yet premium. Loved the hotel selection and itinerary." },
-  { name: "Nikita Mehra", text: "Booking my Manali trip was super easy. I felt safe, comfortable and well-guided the whole time." },
-  { name: "Sahil Gupta", text: "Great value for money! The Kerala package was stunning and well organized. Highly recommended." },
-  { name: "Priya Deshmukh", text: "Loved how transparent and helpful they were. My solo trip to Jaipur became memorable because of them." },
-  { name: "Arjun Nair", text: "Everything was smooth right from pickup to drop. Perfect for family vacations. Will surely book again." },
-  { name: "Meera Joshi", text: "Affordable and hassle-free. Our Ooty trip was beautiful and perfectly planned." },
-  { name: "Rohan Jadhav", text: "Superb service! Quick responses, clear details and no hidden charges. Goa trip was 10/10." },
+  {
+    name: "Aarav Sharma",
+    text: "Our Hyderabad to Goa trip with TourRabbit was perfectly organized. Smooth booking, great hotel selection, and constant support throughout the journey."
+  },
+  {
+    name: "Riya Verma",
+    text: "TourRabbit helped us choose the perfect Pondicherry package. Everything—from travel planning to the stay arrangements—was exactly as promised."
+  },
+  {
+    name: "Krishna Patel",
+    text: "Very professional service! TourRabbit planned a budget-friendly yet premium trip for us. The itinerary and hotel choices were on point."
+  },
+  {
+    name: "Nikita Mehra",
+    text: "Booking my Manali trip through TourRabbit was super easy. I felt safe, comfortable, and well-guided the entire time."
+  },
+  {
+    name: "Sahil Gupta",
+    text: "Our Meghalaya trip was stunning! TourRabbit provided great value for money and handled everything smoothly. Highly recommended."
+  },
+  {
+    name: "Priya Deshmukh",
+    text: "TourRabbit was transparent and extremely helpful. My solo Jaipur trip became memorable because of their planning and support."
+  },
+  {
+    name: "Arjun Nair",
+    text: "Everything—from pickup to drop—was seamless. TourRabbit is perfect for family vacations. Will surely plan again with them."
+  },
+  {
+    name: "Meera Joshi",
+    text: "Affordable and hassle-free experience. Our Ooty trip booked through TourRabbit was beautiful and perfectly organized."
+  },
+  {
+    name: "Rohan Jadhav",
+    text: "Superb service by TourRabbit! Clear details, instant responses, and no hidden charges. Our Goa trip turned out to be 10/10."
+  },
 ];
+
 
 const Testimonials = () => {
   const container = useRef(null);

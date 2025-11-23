@@ -52,9 +52,15 @@ const Packages = () => {
     animationRef.current = anim;
 
     // Pause on hover
+
+cards.forEach((card) => {
+  card.addEventListener("mouseenter", () => anim.pause());
+  card.addEventListener("mouseleave", () => anim.play());
+});
+
+  
     const container = containerRef.current;
-    container.addEventListener("mouseenter", () => anim.pause());
-    container.addEventListener("mouseleave", () => anim.play());
+   
 
     // Draggable
     Draggable.create(slider, {

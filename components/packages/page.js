@@ -9,7 +9,7 @@ import PackageCard from "../../components/PackageCard";
 gsap.registerPlugin(Draggable, ScrollTrigger);
 
 const Packages = () => {
-  const isProduction = process.env.NEXT_PUBLIC_IS_PRODUCTION === "true";
+  const isProduction = process.env.NEXT_PUBLIC_IS_PRODUCTION;
 
   const containerRef = useRef(null);
   const sliderRef = useRef(null);

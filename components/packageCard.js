@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 
 const PackageCard = ({ img, title, days, link }) => {
+  const isProduction = process.env.NEXT_PUBLIC_IS_PRODUCTION;
   return (
     <div
       className="
@@ -21,7 +22,9 @@ const PackageCard = ({ img, title, days, link }) => {
       }}
     >
       <div className="w-full h-48 md:h-56 overflow-hidden">
-        <Image
+      {
+        isProduction?(
+          <Image
           src={img}
           alt={title}
           className="w-full h-full object-cover opacity-90"
@@ -30,6 +33,15 @@ const PackageCard = ({ img, title, days, link }) => {
           loading="lazy"
           decoding="async"
         />
+        ):(
+          <img 
+          src={img)
+          alt={title}
+          className="w-full h-full object-cover opacity-90"
+          loading="lazy"
+          />
+        )
+      }
       </div>
 
       <div className="p-5">

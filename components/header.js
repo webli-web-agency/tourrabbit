@@ -32,7 +32,7 @@ const Header = () => {
       // OPEN MENU
       tl.to(".line-1", { rotate: 45, y: 6 })
         .to(".line-2", { rotate: -45, y: -6 }, "<")
-        .to(".overlay", { yPercent: -100, opacity:1 }, "<")
+        .to(".overlay", { yPercent: -130, opacity:1 }, "<")
         .fromTo(
           ".nav-link",
           { opacity: 0, y: 20 },
@@ -56,7 +56,7 @@ const Header = () => {
     });
 
     tl.to(".nav-link", { opacity: 0, y: 10, stagger: -0.06 })
-      .to(".overlay", { yPercent: 100, opacity: 1 }, "<")
+      .to(".overlay", { yPercent: 130, opacity: 1 }, "<")
       .to(".line-1", { rotate: 0, y: 0 }, "-=0.1")
       .to(".line-2", { rotate: 0, y: 0 }, "<");
 
@@ -113,7 +113,7 @@ const Header = () => {
       {/* FULL-SCREEN OVERLAY MENU */}
       <div
         className="
-          overlay fixed top-[100%] left-0 w-screen h-screen 
+          overlay fixed top-[130%] left-0 w-screen h-screen 
           bg-gradient-to-b from-[#f8e27a] via-[#f4c539] to-black
           z-[98] flex flex-col justify-center items-center gap-5 md:gap-10
           text-black text-md md:text-2xl font-bold tracking-wide uppercase

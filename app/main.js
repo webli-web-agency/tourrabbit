@@ -45,10 +45,10 @@ const Main = () => {
       <main className="relative w-screen overflow-x-hidden overflow-y-visible">
         <Header />
         <HomeMain />
-        <AboutMain />
-        <ServicesMain />
         <PackagesMain />
+        <ServicesMain />
         <TestimonialsMain />
+        <AboutMain />
         <ContactMain />
         <Footer />
       </main>

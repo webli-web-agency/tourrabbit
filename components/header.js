@@ -56,7 +56,7 @@ const Header = () => {
     });
 
     tl.to(".nav-link", { opacity: 0, y: 10, stagger: -0.06 })
-      .to(".overlay", { yPercent: -130, opacity: 1 }, "<")
+      .to(".overlay", { yPercent: -100, opacity: 1 }, "<")
       .to(".line-1", { rotate: 0, y: 0 }, "-=0.1")
       .to(".line-2", { rotate: 0, y: 0 }, "<");
 

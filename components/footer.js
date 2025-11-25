@@ -16,7 +16,7 @@ const Footer = () => {
 
         {/* LEFT SECTION */}
         <div className="flex flex-col gap-3 max-w-sm">
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Tour Rabbit</h1>
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight">Tour <span className="text-yellow-500">Rabbit</span></h1>
           <p className="text-sm text-white/70 leading-relaxed">
             Hop into unforgettable journeys! We craft unique travel experiences with the perfect
             blend of design, storytelling, and adventure.
